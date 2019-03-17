@@ -7,18 +7,25 @@ public class Main {
     private static Button button = new Button("Number 1");
 
     public static void main(String[] args) {
-        class ClickListener implements Button.OnClickListener {
+//        class ClickListener implements Button.OnClickListener {
+//
+//            public ClickListener() {
+//                System.out.println("I've been attached");
+//            }
+//
+//            @Override
+//            public void onClick(String title) {
+//                System.out.println(title + " was clicked");
+//            }
+//        }
+//        button.setOnClickListener(new ClickListener());
 
-            public ClickListener() {
-                System.out.println("I've been attached");
-            }
-
+        button.setOnClickListener(new Button.OnClickListener() {  // anonymous class
             @Override
             public void onClick(String title) {
                 System.out.println(title + " was clicked");
             }
-        }
-        button.setOnClickListener(new ClickListener());
+        });
         listen();
     }
 
@@ -26,7 +33,7 @@ public class Main {
         boolean quit = false;
         while (!quit) {
             int choice = scanner.nextInt();
-            //   scanner.nextLine();
+            scanner.nextLine();
             switch (choice) {
                 case 0:
                     quit = true;
