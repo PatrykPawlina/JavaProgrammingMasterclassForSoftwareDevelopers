@@ -1,7 +1,7 @@
 package _9_inner_and_abstract_classes_and_interfaces.abstract_class;
 
-public class Eangle extends Bird {
-    public Eangle(String name) {
+public class Eagle extends Bird {
+    public Eagle(String name) {
         super(name);
     }
 

@@ -7,13 +7,13 @@ public class Player implements Saveable {
 
     private String name;
     private int hitPoints;
-    private int strenght;
+    private int strength;
     private String weapon;
 
-    public Player(String name, int hitPoints, int strenght) {
+    public Player(String name, int hitPoints, int strength) {
         this.name = name;
         this.hitPoints = hitPoints;
-        this.strenght = strenght;
+        this.strength = strength;
         this.weapon = "Sword";
     }
 
@@ -33,12 +33,12 @@ public class Player implements Saveable {
         this.hitPoints = hitPoints;
     }
 
-    public int getStrenght() {
-        return strenght;
+    public int getstrength() {
+        return strength;
     }
 
-    public void setStrenght(int strenght) {
-        this.strenght = strenght;
+    public void setstrength(int strength) {
+        this.strength = strength;
     }
 
     public String getWeapon() {
@@ -54,7 +54,7 @@ public class Player implements Saveable {
         List<String> value = new ArrayList<>();
         value.add(0, this.name);
         value.add(1, "" + this.hitPoints);
-        value.add(2, "" + this.strenght);
+        value.add(2, "" + this.strength);
         value.add(3, "" + this.weapon);
         return value;
     }
@@ -64,9 +64,8 @@ public class Player implements Saveable {
         if (savedValue != null && savedValue.size() > 0) {
             this.name = savedValue.get(0);
             this.hitPoints = Integer.parseInt(savedValue.get(1));
-            this.strenght = Integer.parseInt(savedValue.get(2));
+            this.strength = Integer.parseInt(savedValue.get(2));
             this.weapon = savedValue.get(3);
-
         }
     }
 
@@ -75,7 +74,7 @@ public class Player implements Saveable {
         return "Player{" +
                 "name='" + name + '\'' +
                 ", hitPoints=" + hitPoints +
-                ", strenght=" + strenght +
+                ", strength=" + strength +
                 ", weapon='" + weapon + '\'' +
                 '}';
     }

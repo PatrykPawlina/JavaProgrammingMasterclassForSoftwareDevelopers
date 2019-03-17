@@ -17,7 +17,7 @@ public class Main {
         penguin.breath();
         penguin.canFly();
         System.out.println("Eagle");
-        Eangle eagle = new Eangle("White-tailed Eagle");
+        Eagle eagle = new Eagle("White-tailed Eagle");
         eagle.eat();
         eagle.breath();
         eagle.canFly();
