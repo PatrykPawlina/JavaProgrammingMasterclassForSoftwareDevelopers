@@ -6,11 +6,27 @@ public class Main {
         BaseballPlayer pat = new BaseballPlayer("Pat");
         SoccerPlayer beckham = new SoccerPlayer("Beckham");
 
-        Team adelaideCrows = new Team("Adelaide Crows");
-        adelaideCrows.addPlayer(joe);
-        adelaideCrows.addPlayer(pat);
-        adelaideCrows.addPlayer(beckham);
+        System.out.println("------------Football Team-------------");
+        Team<FootballPlayer> footballTeam = new Team<>("Adelaide Crows");
+        footballTeam.addPlayer(joe);
+//        footballTeam.addPlayer(pat);
+//        footballTeam.addPlayer(beckham);  error, code does not work, incompatibility of generic types
 
-        System.out.println(adelaideCrows.numPlayers());
+        System.out.println(footballTeam.numPlayers());
+
+        System.out.println("------------Baseball Team-------------");
+        Team<BaseballPlayer> baseballTeam = new Team<>("Chicago Cubs");
+        baseballTeam.addPlayer(pat);
+
+        System.out.println(baseballTeam.numPlayers());
+
+        System.out.println("------------Soccer Team--------------");
+        Team<SoccerPlayer> soccerTeam = new Team<>("Real Madrid");
+        soccerTeam.addPlayer(beckham);
+
+        System.out.println(soccerTeam.numPlayers());
+
+//        Team<String> falseTeam = new Team<>("this won't work"); // error, String cannot be cast to object Player
+//        falseTeam.addPlayer("nobody");
     }
 }
