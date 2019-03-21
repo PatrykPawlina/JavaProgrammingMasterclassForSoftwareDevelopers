@@ -1,4 +1,4 @@
-package _10_java_generics;
+package _10_java_generics.player;
 
 public abstract class Player {
     private String name;

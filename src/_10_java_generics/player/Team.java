@@ -1,4 +1,4 @@
-package _10_java_generics;
+package _10_java_generics.player;
 
 import java.util.ArrayList;
 
@@ -34,17 +34,22 @@ public class Team<T extends Player> {
     }
 
     public void matchResult(Team opponent, int ourScore, int theirScore) {
+        String message;
         if (ourScore > theirScore) {
             won++;
-            System.out.println("We win");
+            message = " beat ";
         } else if (ourScore < theirScore) {
             lost++;
-            System.out.println("Our opponent win");
-        } else
+            message = " lost to ";
+        } else {
             tied++;
-        System.out.println("The match has been finished with a draw.");
+            message = " drew with ";
+        }
         played++;
         if (opponent != null) {
+            System.out.println(this.getName() + message + opponent.getName());
+            System.out.println("\t" + "\t" + "The score was: " + "\n" + this.getName() + " - " + opponent.getName()
+                    + "  " + ourScore + " : " + theirScore);
             opponent.matchResult(null, ourScore, theirScore);
         }
     }
