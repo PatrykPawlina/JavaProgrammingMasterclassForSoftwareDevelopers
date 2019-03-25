@@ -10,32 +10,42 @@ public class Main {
 
 
         System.out.println("------------Football Team-------------");
-        Team<FootballPlayer> footballTeam = new Team<>("Adelaide Crows");
-        footballTeam.addPlayer(joe);
+        Team<FootballPlayer> adelaideCrows = new Team<>("Adelaide Crows");
+        adelaideCrows.addPlayer(joe);
 //        footballTeam.addPlayer(pat);
 //        footballTeam.addPlayer(beckham);  error, code does not work, incompatibility of generic types
 
-        System.out.println(footballTeam.numPlayers());
+        System.out.println(adelaideCrows.numPlayers());
 
         System.out.println("------------Baseball Team-------------");
-        Team<BaseballPlayer> baseballTeam = new Team<>("Chicago Cubs");
-        baseballTeam.addPlayer(mark);
-        baseballTeam.addPlayer(pat);
+        Team<BaseballPlayer> chicagoCubs = new Team<>("Chicago Cubs");
+        Team<BaseballPlayer> newYorkYankees = new Team<>("New York Yankees");
+        chicagoCubs.addPlayer(mark);
+        newYorkYankees.addPlayer(pat);
 
-        System.out.println(baseballTeam.numPlayers());
+        System.out.println(chicagoCubs.numPlayers());
 
         System.out.println("------------Soccer Team--------------");
-        Team<SoccerPlayer> soccerTeam = new Team<>("Real Madrid");
-        soccerTeam.addPlayer(beckham);
-        soccerTeam.addPlayer(ronaldo);
+        Team<SoccerPlayer> realMadrid = new Team<>("Real Madrid");
+        Team<SoccerPlayer> chelseaLondon = new Team<>("Chelsea London");
+        realMadrid.addPlayer(beckham);
+        realMadrid.addPlayer(ronaldo);
 
-        System.out.println(soccerTeam.numPlayers());
+        System.out.println(realMadrid.numPlayers());
 
 //        Team<String> falseTeam = new Team<>("this won't work"); // error, String cannot be cast to object Player
 //        falseTeam.addPlayer("nobody");
 
-        soccerTeam.matchResult(baseballTeam, 4, 7);
-        footballTeam.matchResult(soccerTeam, 2, 2);
-        baseballTeam.matchResult(baseballTeam, 5, 3);
+        realMadrid.matchResult(chelseaLondon, 5, 7);
+        chelseaLondon.matchResult(realMadrid, 7, 2);
+        realMadrid.matchResult(chelseaLondon, 6, 4);
+        chicagoCubs.matchResult(newYorkYankees, 5, 3);
+
+        System.out.println("Ranking");
+        System.out.println(adelaideCrows.getName() + " : " + adelaideCrows.ranking());
+        System.out.println(chicagoCubs.getName() + " : " + chicagoCubs.ranking());
+        System.out.println(realMadrid.getName() + " : " + realMadrid.ranking());
+        System.out.println(chelseaLondon.getName() + " : " + chelseaLondon.ranking());
+
     }
 }
